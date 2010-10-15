@@ -329,10 +329,13 @@ h1 {
 	line-height: 1.3em;
 	font-weight: 700;
 	color: #444;
+	letter-spacing: 0.05em;
+
 }
 article h1 {
 	font-size: 197%;
 	font-weight: 700;
+	letter-spacing: 0;
 }
 h2 {
 	font-size: 123.1%;
@@ -345,12 +348,20 @@ h3 {
 	margin-bottom: 4px;
 }
 h4.date {
-	font-weight: 300;
+	color: #444;
+	font-weight: 100;
 	font-style: italic;
-	font-size: 108%;
+	font-size: 100%;
 	margin-left: -5%;
 	margin-top: 60px;
 }
+/*
+h4.date:before {
+	margin-right: .5em;
+	content: "★";	
+	color: #ccc;
+}
+*/
 h1 a, h1 a:active, h1 a:visited,
 h2 a, h2 a:active, h2 a:visited { 
 	color: inherit;
@@ -366,7 +377,7 @@ article h1 a:after {
 
 /* Text Styles */
 p {
-	margin-bottom: 18px;
+	margin-bottom: 10px;
 	font-weight: 100;
 }
 em {
@@ -560,16 +571,23 @@ article header time {
 
 /* text */
 
+/*
 article section > p:first-of-type {
 	color: #000;
 	font-size: 104%;
 	line-height: 1.45em;
 	font-weight: 300;
 }
+article section > p:last-of-type {
+	color: inherit;
+	font-size: 100%;
+	font-weight: 100;
+}
 article section > p:nth-of-type(2) {
 	border-top: 2px dotted #eaeaea;
 	padding-top: 18px;
 }
+*/
 article section > p:last-of-type:after {
 	margin-left: 5px;
 	content: "☆";	
@@ -639,6 +657,16 @@ section.image cite {
 }
 
 
+/* Forms */
+label {
+	display: block;
+	margin-top: 1em;
+	font-weight: 500;
+}
+
+input[type=text] {
+	width: 63%;
+}
 
 
 /* 
@@ -741,6 +769,16 @@ section.image cite {
 		background: #efefef;
 	}
 	
+	article, 
+	section.post {
+		padding: 20px 0;
+	}
+	article header,
+	section.post header {
+		margin-bottom: 20px;
+	}
+	
+
 	code {
 		padding: 0;
 	}
@@ -751,3 +789,4 @@ section.image cite {
 
   
 }
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  
