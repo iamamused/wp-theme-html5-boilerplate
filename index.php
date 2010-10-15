@@ -1,10 +1,15 @@
 <?php get_header(); ?>
 	<?php if (have_posts()) : ?>
+	
+		<?php $date = ''; ?>
 		<?php while (have_posts()) : the_post(); ?>
 		
-			<?php
-			$custom_fields = get_post_custom();
-			?>
+			<?php $custom_fields = get_post_custom(); ?>
+			
+			<?php if ($date != get_the_time('F j, Y')) : ?>
+			<h4 class="date"><time datetime="<?php the_time('Y-m-d') ?>"><?php the_time('l, F jS, Y') ?></time></h4>
+			<?php endif; ?>
+			<?php $date = get_the_time('F j, Y'); ?>
 			
 			<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 				<header>
@@ -18,7 +23,6 @@
 					<?php if (has_post_thumbnail()) : ?>
 						<?php echo the_post_thumbnail('h5bp-post-image'); ?>
 					<?php endif; ?>
-					<time datetime="<?php the_time('Y-m-d') ?>"><?php the_time('F j, Y') ?></time>
 				</header>
 				<section>
 					<?php the_content('Read the rest of this entry &raquo;'); ?>

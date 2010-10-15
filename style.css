@@ -328,11 +328,12 @@ p a:hover {
 h1 {
 	font-size: 182%;
 	line-height: 1.3em;
-	font-weight: normal;
+	font-weight: 300;
 	color: #444;
 }
 article h1 {
 	font-size: 197%;
+	font-weight: 600;
 }
 h2 {
 	font-size: 123.1%;
@@ -344,8 +345,17 @@ h3 {
 	font-size: 93%;
 	margin-bottom: 4px;
 }
+h4.date {
+	font-weight: 300;
+	font-style: italic;
+	font-size: 108%;
+	margin-left: -5%;
+	margin-top: 60px;
+}
 h1 a, h1 a:active, h1 a:visited,
-h2 a, h2 a:active, h2 a:visited { color: inherit; }
+h2 a, h2 a:active, h2 a:visited { 
+	color: inherit;
+}
 
 /*
 article h1 a:after {
@@ -358,6 +368,7 @@ article h1 a:after {
 /* Text Styles */
 p {
 	margin-bottom: 18px;
+	font-weight: 100;
 }
 em {
 	font-style: italic;
@@ -507,11 +518,9 @@ textarea#comment {
 
 article, 
 section.post {
-	margin: 80px 0 0px 0;
-	padding: 0 0 80px 0;
-	border-bottom: 1px dotted #ccc;
-
-
+	margin: 0px;
+	padding: 40px 0;
+	/* border-bottom: 1px solid #eee; */
 }
 article header,
 section.post header {
@@ -525,39 +534,21 @@ article footer,
 section.post footer
 {
 	padding: 3px 0px;
-	/*
-	border-top: 3px double #ccc;
-	border-bottom: 3px double #ccc;
-	*/
+	border-top: 1px solid #eee;
+	border-bottom: 3px double #eee;
+	font-size: 85%;
 }
 
 
-section.h5bp_image {
-	padding-bottom: 70px;
-	border-bottom: 1px dotted #ccc;
-	margin-bottom: 0px;
-	margin-top: 80px;
-}
-section.h5bp_image h1 {
-	margin-bottom: 1em;
+article header figure {
+	margin-top: 1em;
 }
 
-section.h5bp_link {
-	padding: 28px 0 10px 8%;
-	border-bottom: 1px dotted #ccc;
-}
-/* first link section after and article */
-article ~ section.h5bp_link {
-	/* border-top: 1px dotted #ccc; */
-}
-section.h5bp_link h1 {
+
+h1.offsite {
 	font-size:1.2em;
 	font-weight: bold;
 	margin-bottom: 0.5em;
-	margin-left: -8%;
-}
-section.h5bp_link h1 a:not(.permalink) {
-	/* border-bottom: 1px solid #eaeaea; */
 }
 
 
@@ -577,7 +568,7 @@ article section > p:first-of-type {
 	color: #000;
 	font-size: 104%;
 	line-height: 1.45em;
-	font-weight: normal;
+	font-weight: 100;
 }
 article section > p:nth-of-type(2) {
 	border-top: 2px dotted #eaeaea;

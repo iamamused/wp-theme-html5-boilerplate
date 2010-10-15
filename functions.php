@@ -1,10 +1,12 @@
 <?php
-//UPDATE `dev_wp_postmeta` set meta_key='h5bp_image_url' WHERE meta_key='h5bp_imgage_url'
-//UPDATE `dev_wp_postmeta` set meta_key='h5bp_image_cite' WHERE meta_key='h5bp_cite_url'
 
-//UPDATE `dev_wp_postmeta` set meta_key='h5bp_image_url' WHERE meta_key='img'
-//UPDATE `dev_wp_postmeta` set meta_key='h5bp_image_cite' WHERE meta_key='credit'
-//UPDATE `dev_wp_postmeta` set meta_key='h5bp_link_url' WHERE meta_key='url'
+/*
+UPDATE `wp_posts` set post_type='post' WHERE post_type='h5pb_image' or post_type='h5pb_link';
+
+UPDATE `wp_postmeta` set meta_key='h5bp_image_url' WHERE meta_key='img';
+UPDATE `wp_postmeta` set meta_key='h5bp_image_cite' WHERE meta_key='credit';
+UPDATE `wp_postmeta` set meta_key='h5bp_link_url' WHERE meta_key='url';
+*/
 
 // Add default posts and comments RSS feed links to head
 add_theme_support('automatic-feed-links');

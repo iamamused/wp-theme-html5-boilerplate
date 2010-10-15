@@ -1,4 +1,19 @@
-<!doctype html>  
+<!doctype html>
+<!--
+
+Like this theme? Want to "borrow" aspects of it? No Problem!
+
+This theme is based on the http://html5boilerplate.com project and can
+be found in my github repos over at http://github.com/iamamused
+
+I'd kindly ask that if you're going to "borrow" it, please change up
+the CSS and design so it's at least not identical to my site.
+
+Thanks,
+
+Jeffrey 
+
+-->
 <!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ --> 
 <!--[if lt IE 7 ]> <html <?php language_attributes(); ?> class="no-js ie6"> <![endif]-->
 <!--[if IE 7 ]>    <html <?php language_attributes(); ?> class="no-js ie7"> <![endif]-->
