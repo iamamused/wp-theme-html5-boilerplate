@@ -2,14 +2,25 @@
 	<?php if (have_posts()) : ?>
 		<?php while (have_posts()) : the_post(); ?>
 		
-			<?php if ( get_post_type() == 'post' ) : ?>
+			<?php
+			$custom_fields = get_post_custom();
+			?>
+			
 			<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 				<header>
-					<h1><a href="<?php the_permalink(); ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>"><?php the_title(); ?></a></h1>
+					<?php if ( !@empty($custom_fields['h5bp_link_url']) ) : ?>
+					<h1 class="offsite"><a href="<?php 
+						echo $custom_fields['h5bp_link_url'][0];
+					?>"><?php the_title(); ?></a>&nbsp;<a class="permalink" href="<?php the_permalink(); ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>">→</a></h1>
+					<? else: ?>
+					<h1 class="onsite"><a href="<?php the_permalink(); ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>"><?php the_title(); ?></a></h1>
+					<?php endif; ?>
+					<?php if (has_post_thumbnail()) : ?>
+						<?php echo the_post_thumbnail('h5bp-post-image'); ?>
+					<?php endif; ?>
 					<time datetime="<?php the_time('Y-m-d') ?>"><?php the_time('F j, Y') ?></time>
 				</header>
 				<section>
-					<?php the_post_thumbnail(array( 150, 150 ), array( 'class' => 'alignleft' )); ?>
 					<?php the_content('Read the rest of this entry &raquo;'); ?>
 				</section>
 				<footer>
@@ -28,38 +39,6 @@
 					</nav>
 				</footer>
 			</article>
-			<?php endif; ?>
-
-			<?php if ( get_post_type() == 'h5bp_link' ) : ?>
-			<section id="link-<?php the_ID(); ?>" <?php post_class(); ?>>
-				<h1><a href="<?php 
-					$custom_fields = get_post_custom();
-					echo $custom_fields['url'][0];
-				?>"><?php the_title(); ?></a>&nbsp;<a class="permalink" href="<?php the_permalink(); ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>">→</a></h1>
-				<?php the_content('Read the rest of this entry &raquo;'); ?>					
-			</section>
-			<?php endif; ?>
-			
-			<?php if ( get_post_type() == 'h5bp_image' ) : ?>
-			<section id="image-<?php the_ID(); ?>" <?php post_class(); ?>>
-				<header class="img">
-					<h1><a href="<?php the_permalink(); ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>"><?php the_title(); ?></a></h1>
-					<img src="<?php 
-						$custom_fields = get_post_custom();
-						echo $custom_fields['img'][0];
-					?>" />
-					<?php
-					if (isset($custom_fields['credit'])) {
-						echo apply_filters( 'the_content', $custom_fields['credit'][0] );
-					}
-					?>
-				</header>
-				<section>
-					<?php the_content('Read the rest of this entry &raquo;'); ?>
-				</section>
-			</section>
-			<?php endif; ?>
-			
 
 		<?php endwhile; ?>
 

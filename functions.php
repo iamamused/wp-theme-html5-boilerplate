@@ -1,13 +1,95 @@
 <?php
+//UPDATE `dev_wp_postmeta` set meta_key='h5bp_image_url' WHERE meta_key='h5bp_imgage_url'
+//UPDATE `dev_wp_postmeta` set meta_key='h5bp_image_cite' WHERE meta_key='h5bp_cite_url'
+
+//UPDATE `dev_wp_postmeta` set meta_key='h5bp_image_url' WHERE meta_key='img'
+//UPDATE `dev_wp_postmeta` set meta_key='h5bp_image_cite' WHERE meta_key='credit'
+//UPDATE `dev_wp_postmeta` set meta_key='h5bp_link_url' WHERE meta_key='url'
 
 // Add default posts and comments RSS feed links to head
-if ( function_exists('add_theme_support') ) add_theme_support('automatic-feed-links');
+add_theme_support('automatic-feed-links');
 
 // Enables the navigation menu ability
-if ( function_exists('add_theme_support') ) add_theme_support('menus');
+add_theme_support('menus');
 
 // Enables post-thumbnail support
-if ( function_exists('add_theme_support') ) add_theme_support('post-thumbnails');
+
+add_theme_support('post-thumbnails');
+set_post_thumbnail_size( 50, 50, true ); // Normal post thumbnails
+add_image_size( 'h5bp-post-image', 600, 9999 ); // Permalink thumbnail size
+
+// Removes inline CSS style for Recent Comments widget
+function html5boilerplate_post_thumbnail_html( $html ) {
+
+global $id;
+$attachment_id = get_post_thumbnail_id( $id );
+	        
+
+$attachment =& get_post($attachment_id);
+
+/*
+  ["ID"]=>
+  int(736)
+  ["post_author"]=>
+  string(1) "1"
+  ["post_date"]=>
+  string(19) "2010-10-15 03:22:42"
+  ["post_date_gmt"]=>
+  string(19) "2010-10-15 03:22:42"
+  ["post_content"]=>
+  string(11) "Description"
+  ["post_title"]=>
+  string(11) "Image Title"
+  ["post_excerpt"]=>
+  string(7) "Caption"
+  ["post_status"]=>
+  string(7) "inherit"
+  ["comment_status"]=>
+  string(6) "closed"
+  ["ping_status"]=>
+  string(6) "closed"
+  ["post_password"]=>
+  string(0) ""
+  ["post_name"]=>
+  string(16) "iphone_stencil-2"
+  ["to_ping"]=>
+  string(0) ""
+  ["pinged"]=>
+  string(0) ""
+  ["post_modified"]=>
+  string(19) "2010-10-15 03:22:42"
+  ["post_modified_gmt"]=>
+  string(19) "2010-10-15 03:22:42"
+  ["post_content_filtered"]=>
+  string(0) ""
+  ["post_parent"]=>
+  int(723)
+  ["guid"]=>
+  string(88) "http://dev.jeffreysambells.com/wordpress/wp-content/uploads/2010/09/iPhone_stencil-2.jpg"
+  ["menu_order"]=>
+  int(0)
+  ["post_type"]=>
+  string(10) "attachment"
+  ["post_mime_type"]=>
+  string(10) "image/jpeg"
+  ["comment_count"]=>
+  string(1) "0"
+  ["ancestors"]=>
+  array(1) {
+    [0]=>
+    int(723)
+  }
+  ["filter"]=>
+  string(3) "raw"
+}
+*/
+	return '<figure title="'.$attachment->post_excerpt.'">' 
+		. $html 
+		. ( ( strlen($attachment->post_content) > 0 ) ? '<figcaption>'.apply_filters( 'the_content', $attachment->post_excerpt ).'</figcaption>' : '' )
+		. '</figure>';
+}
+add_filter( 'post_thumbnail_html', 'html5boilerplate_post_thumbnail_html' );
+
 
 // Adds callback for custom TinyMCE editor stylesheets 
 if ( function_exists('add_editor_style') ) add_editor_style();
@@ -25,13 +107,12 @@ function register_my_menus() {
 add_action( 'init', 'register_my_menus' );
 
 // Registers a widgetized sidebar and replaces default WordPress HTML code with a better HTML
-if ( function_exists('register_sidebar') )
-    register_sidebar(array(
-        'before_widget' => '<section>',
-        'after_widget' => '</section>',
-        'before_title' => '<h2>',
-        'after_title' => '</h2>',
-    ));
+register_sidebar(array(
+    'before_widget' => '<section>',
+    'after_widget' => '</section>',
+    'before_title' => '<h2>',
+    'after_title' => '</h2>',
+));
 
 // Returns TRUE if more than one page exists. Useful for not echoing .post-navigation HTML when there aren't posts to page
 function show_posts_nav() {
@@ -78,65 +159,10 @@ function html5boilerplate_footer() { ?>
 <?php } 
 add_action('wp_footer', 'html5boilerplate_footer');
 
-function html5boilerplate_create_post_type() {
-	register_post_type( 'h5bp_link',
-	  array(
-	    'labels' => array(
-	      'name' => __( 'Post Links' ),
-	      'singular_name' => __( 'Post Link' )
-	    ),
-	    'supports' => array( 'title', 'editor' ),
-	    'public' => true,
-	    'rewrite' => array( 'slug' => 'link', 'with_front' => false ),
-	  )
-	);
-	register_post_type( 'h5bp_image',
-	  array(
-	    'labels' => array(
-	      'name' => __( 'Post Images' ),
-	      'singular_name' => __( 'Post Image' )
-	    ),
-	    'supports' => array( 'title', 'editor' ),
-	    'public' => true,
-	    'rewrite' => array( 'slug' => 'image', 'with_front' => false ),
-	  )
-	);
-}
-add_action( 'init', 'html5boilerplate_create_post_type' );
-
-function html5boilerplate_query_post_type($query) {
-	
-	if (is_preview()) {
-		return $query;
-	}
-	
-	//if( is_category() || is_tag() || is_home() ) {
-    	$post_type = get_query_var('post_type');
-		if($post_type) {
-		    $post_type = array_merge(
-		    	(array)$post_type, 
-		    	array( 'nav_menu_item' )
-		    );
-		} else {
-			//array(7) { [0]=> string(4) "post" [1]=> string(4) "page" [2]=> string(10) "attachment" [3]=> string(8) "revision" [4]=> string(13) "nav_menu_item" [5]=> string(9) "h5bp_link" [6]=> string(10) "h5bp_image" }
-		    if (is_feed()) {
-		    	$post_type = array('post','h5bp_link','h5bp_image');
-		    } else {
-		    	$post_type = get_post_types();
-		    }
-		}
-    	$query->set('post_type',$post_type);
-	//}
-	return $query;
-}
-add_filter('pre_get_posts', 'html5boilerplate_query_post_type');
-
-
-
 function html5boilerplate_admin_init(){
-	add_meta_box("html5boilerplate_link_meta", "Link Meta", "html5boilerplate_link_meta", "h5bp_link", "normal", "low");
-  	add_meta_box("html5boilerplate_image_meta", "Image Meta", "html5boilerplate_image_meta", "h5bp_image", "normal", "low");
+	add_meta_box("html5boilerplate_link_meta", "Link Meta", "html5boilerplate_link_meta", "post", "normal", "low");
 }
+add_action("admin_init", "html5boilerplate_admin_init");
  
 function html5boilerplate_link_meta(){
   global $post;
@@ -148,49 +174,42 @@ function html5boilerplate_link_meta(){
   <?php
 }
  
-function html5boilerplate_image_meta() {
-  global $post;
-  $custom = get_post_custom($post->ID);
-  $designers = $custom["img"][0];
-  $developers = $custom["credit"][0];
-  ?>
-  <p><label>href:</label><br />
-  <textarea cols="50" rows="5" name="img"><?php echo $designers; ?></textarea></p>
-  <p><label>Credit:</label><br />(Usel &lt;cite&gt; where appropriate.)<br />
-  <textarea cols="50" rows="5" name="credit"><?php echo $developers; ?></textarea></p>
-  <?php
-}
-add_action("admin_init", "html5boilerplate_admin_init");
-
 
 // Custom post type fields
 function html5boilerplate_save_details(){
 	global $post;
 	$post_type = get_post_type($post->ID);
-	if($post_type == 'h5bp_link') {
+	if($post_type == 'post') {
 		update_post_meta($post->ID, "url", $_POST["url"]);
-	} else if($post_type == 'h5bp_image') {
-		update_post_meta($post->ID, "img", $_POST["img"]);
-		update_post_meta($post->ID, "credit", $_POST["credit"]);
 	}
 }
 add_action('save_post', 'html5boilerplate_save_details');
 
-
 function html5boilerplate_the_permalink_rss($file) {
-	if (get_post_type() == 'h5bp_link') {
-		$custom_fields = get_post_custom();
-		return $custom_fields['url'][0];
+	$custom_fields = get_post_custom();
+	if ( !@empty($custom_fields['h5bp_link_url']) ) {
+		return $custom_fields['h5bp_link_url'][0];
 	}
 	return $file;
 }
 add_filter('the_permalink_rss', 'html5boilerplate_the_permalink_rss');
 
 function html5boilerplate_rss_footers($content) {
-    if (get_post_type() == 'h5bp_link') {
+	$custom_fields = get_post_custom();
+	if ( !@empty($custom_fields['h5bp_link_url']) ) {
     	return $content .= '<p><a href="' . get_permalink() . '">Permalink</a></p>';
     }
     return $content;
 }
 add_filter('the_excerpt_rss', 'html5boilerplate_rss_footers');
 add_filter('the_content_rss', 'html5boilerplate_rss_footers');
+
+function html5boilerplate_rss_post_thumbnail($content) {
+	global $post;
+	if(has_post_thumbnail($post->ID)) {
+		$content = '<p>' . get_the_post_thumbnail($post->ID,'h5bp-post-image') .'</p>' . $content;
+	}
+	return $content;
+}
+add_filter('the_excerpt_rss', 'html5boilerplate_rss_post_thumbnail');
+add_filter('the_content_feed', 'html5boilerplate_rss_post_thumbnail');
