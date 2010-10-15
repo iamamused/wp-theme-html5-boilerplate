@@ -174,10 +174,10 @@ add_action("admin_init", "html5boilerplate_admin_init");
 function html5boilerplate_link_meta(){
   global $post;
   $custom = get_post_custom($post->ID);
-  $url = $custom["url"][0];
+  $h5bp_link_url = $custom["h5bp_link_url"][0];
   ?>
   <label>href:</label>
-  <input name="url" size="100" value="<?php echo $url; ?>" />
+  <input name="h5bp_link_url" size="100" value="<?php echo $h5bp_link_url; ?>" />
   <?php
 }
  
@@ -187,7 +187,7 @@ function html5boilerplate_save_details(){
 	global $post;
 	$post_type = get_post_type($post->ID);
 	if($post_type == 'post') {
-		update_post_meta($post->ID, "url", $_POST["url"]);
+		update_post_meta($post->ID, "h5bp_link_url", $_POST["h5bp_link_url"]);
 	}
 }
 add_action('save_post', 'html5boilerplate_save_details');
