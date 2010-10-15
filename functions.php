@@ -23,6 +23,9 @@ add_image_size( 'h5bp-post-image', 600, 9999 ); // Permalink thumbnail size
 // Removes inline CSS style for Recent Comments widget
 function html5boilerplate_post_thumbnail_html( $html ) {
 
+	// strip out width and height, let css handle it.
+	$html = preg_replace('/(width|height)="[0-9]+"[ ]*/', '', $html);
+
 global $id;
 $attachment_id = get_post_thumbnail_id( $id );
 	        
@@ -130,12 +133,13 @@ function html5boilerplate_remove_recent_comments_style() {
 add_action( 'widgets_init', 'html5boilerplate_remove_recent_comments_style' );
 
 // Custom commments HTML
+// Used in comments.php: wp_list_comments('callback=html5boilerplate_comment')
 function html5boilerplate_comment($comment, $args, $depth) {
    $GLOBALS['comment'] = $comment; ?>
    <dt <?php comment_class(); ?> id="comment-<?php comment_ID(); ?>-author">
-      <?php echo get_avatar($comment,$size='54'); ?>
-      <a href="#comment-<?php comment_ID() ?>" title="Permanent Link for this comment">#</a>
+      <?php /* echo get_avatar($comment,$size='54');*/ ?>
       <?php comment_author_link(); ?> <time datetime="">on <?php comment_date() ?> at <?php comment_time() ?></time> 
+      <a href="#comment-<?php comment_ID() ?>" title="Permanent Link for this comment">#permalink</a>
    </dt>
    <dd <?php comment_class(); ?> id="comment-<?php comment_ID(); ?>-body">
 	<?php if ($comment->comment_approved == '0') : ?>
@@ -144,7 +148,8 @@ function html5boilerplate_comment($comment, $args, $depth) {
 	<?php comment_text(); ?>
 	<?php comment_reply_link(array_merge( $args, array('depth' => $depth, 'max_depth' => $args['max_depth']))) ?> <?php edit_comment_link('Edit this comment', ' ', ''); ?>
 	</dd>
-<?php }
+	<?php 
+}
 
 // Adds a handy 'tag-cloud' class to the Tag Cloud Widget for better styling
 function html5boilerplate_tag_cloud($tags) {

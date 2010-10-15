@@ -262,7 +262,6 @@ html {
 
 body {
 	/* Let's go with minimist fonts */
-	font-family: Helvetica, Arial, sans-serif;
 	line-height: 1.45em;
 	margin: 0px 20%;
 }
@@ -328,12 +327,12 @@ p a:hover {
 h1 {
 	font-size: 182%;
 	line-height: 1.3em;
-	font-weight: 300;
+	font-weight: 700;
 	color: #444;
 }
 article h1 {
 	font-size: 197%;
-	font-weight: 600;
+	font-weight: 700;
 }
 h2 {
 	font-size: 123.1%;
@@ -374,7 +373,7 @@ em {
 	font-style: italic;
 }
 strong {
-	font-weight: bold;
+	font-weight: 500;
 }
 small {
 	font-size: 85%;
@@ -383,7 +382,6 @@ small {
 /* Code etc. */
 code {
 	color: #606328;
-	font-family: Menlo, monospace;
 	font-size: 85%;
 }
 pre {
@@ -466,7 +464,7 @@ nav li:before {
 /* Tables */
 table { }
 table caption {
-	font-weight: bold;
+	font-weight: 700;
 	background: #999;
 	color: #fff;
 	margin: 4px;
@@ -491,8 +489,8 @@ dialog {
 	margin: 10px 0 20px 0;
 }
 dialog dt {
-	padding: 10px 30px;
-	font-weight: bold;
+	padding: 10px 0px;
+	font-weight: 500;
 	color: #999;
 }
 dialog dt time {
@@ -534,7 +532,6 @@ article footer,
 section.post footer
 {
 	padding: 3px 0px;
-	border-top: 1px solid #eee;
 	border-bottom: 3px double #eee;
 	font-size: 85%;
 }
@@ -547,7 +544,6 @@ article header figure {
 
 h1.offsite {
 	font-size:1.2em;
-	font-weight: bold;
 	margin-bottom: 0.5em;
 }
 
@@ -555,7 +551,7 @@ h1.offsite {
 /* Dates */
 article header time {
 	color: #ccc;
-	font-weight: bold;
+	font-weight: 700;
 	display: block;
 	font-size: 77%;
 }
@@ -568,7 +564,7 @@ article section > p:first-of-type {
 	color: #000;
 	font-size: 104%;
 	line-height: 1.45em;
-	font-weight: 100;
+	font-weight: 300;
 }
 article section > p:nth-of-type(2) {
 	border-top: 2px dotted #eaeaea;
@@ -615,7 +611,7 @@ article section > p:last-of-type:after {
 	color: #607890 /* #c7392f */  ;
 } 
 #header h1 span {
-	font-weight: bold;
+	font-weight: 500;
 }
 #header nav {
 	margin: 2px 0 50px 0;
@@ -641,18 +637,6 @@ section.image cite {
 	display: block;
 	margin: 0.5em;
 }
-
-
-
-/* twitter widget */
-header .entry-meta, 
-header .time-meta,
-.twitterwidget-title { display: none; }
-header ul { margin-left: 0; }
-header li { list-style-type: none; }
-header blockquote { font-size: 92%; line-height: 140%; color: #ccc; width: inherit; }
-header blockquote a { color: inherit !important; font-weight: bold; }
-
 
 
 
@@ -747,5 +731,23 @@ header blockquote a { color: inherit !important; font-weight: bold; }
 		content: "★";	
 		color: #ccc;
 	}
+	
+	h4.date {
+		margin-left: 0;
+		text-align: center;
+		border-bottom: 2px dotted #ccc;
+		border-top: 2px dotted #ccc;
+		padding: 6px;
+		background: #efefef;
+	}
+	
+	code {
+		padding: 0;
+	}
+	pre {
+		border: 0;
+		background: #ffe;
+	}
+
   
 }

@@ -31,7 +31,8 @@
 					<?php wp_link_pages('before=<div class="post-page-links">Page:&after=</div>'); ?>
 					<nav>
 						<ul>
-							<li><?php comments_popup_link('Leave your comment', 'One comment', '% comments'); ?><?php the_tags(' &bull; Tagged as: ', ', ', ''); ?></li>
+							<?php if (comments_open()) : ?><li><?php comments_popup_link('Share your thoughts', 'One thought', '% thoughts'); ?></li><?php endif; ?>
+							<?php if (has_tag()) : ?><li><?php the_tags(' &bull; Tagged with ', ', ', ''); ?></li><?php endif; ?>
 							<li>Share on 
 							<a href="http://twitter.com/home?status=Reading:+<?php urlencode(the_permalink()); ?>">Twitter</a>,
 							<a href="http://www.facebook.com/share.php?u=<?php urlencode(the_permalink()); ?>">Facebook</a>,
