@@ -220,3 +220,49 @@ function html5boilerplate_rss_post_thumbnail($content) {
 }
 add_filter('the_excerpt_rss', 'html5boilerplate_rss_post_thumbnail');
 add_filter('the_content_feed', 'html5boilerplate_rss_post_thumbnail');
+
+////////////////
+// Theme Options
+////////////////
+
+
+// create custom plugin settings menu
+function h5bp_register_mysettings() {
+	register_setting( 'h5bp-settings-group', 'bookmark_image_url' );
+}
+
+function h5bp_create_menu() {
+	$info = get_theme_data( dirname(__FILE__) . '/style.css' );
+    add_theme_page($info['Name'] . ' Options', $info['Name'] . ' Options', 'edit_themes', basename(__FILE__), 'h5bp_settings_page');
+	add_action( 'admin_init', 'h5bp_register_mysettings' );
+}
+add_action('admin_menu', 'h5bp_create_menu');
+
+
+
+function h5bp_settings_page() {
+	$info = get_theme_data( dirname(__FILE__) . '/style.css' );
+
+?>
+<div class="wrap">
+<h2><?php echo $info['Name'] . 'Options' ?></h2>
+
+<form method="post" action="options.php">
+    <?php settings_fields( 'h5bp-settings-group' ); ?>
+
+    <table class="form-table">
+        <tr valign="top">
+        <th scope="row">Bookmark Image URL</th>
+        <td><input type="text" name="bookmark_image_url" value="<?php echo get_option('bookmark_image_url'); ?>" /></td>
+        </tr>
+         
+    </table>
+    
+    <p class="submit">
+    <input type="submit" class="button-primary" value="<?php _e('Save Changes') ?>" />
+    </p>
+
+</form>
+</div>
+<?php 
+} 
