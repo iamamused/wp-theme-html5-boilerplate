@@ -161,7 +161,7 @@ add_action('wp_tag_cloud', 'html5boilerplate_tag_cloud');
 // Footer
 function html5boilerplate_footer() { ?>
 	<footer id="footer">
-		<p>Proudly powered by <a href="http://www.wordpress.org">WordPress</a> and <a href="http://www.jeffreysambells.com/themes/html5boilerplate/" title="Free WordPress theme">html5boilerplate</a>, a theme by <a href="http://www.jeffreysambells.com" title="Web Designer / Developer">Jeffrey Sambells</a>. <a href="<?php bloginfo('rss2_url'); ?>" title="Syndicate this site using RSS"><acronym title="Really Simple Syndication">RSS</acronym> Feed</a>.</p>
+		<p>Proudly powered by <a href="http://www.wordpress.org">WordPress</a> and <a href="http://www.jeffreysambells.com/projects/wp-theme-html5-boilerplate/" title="Free WordPress theme">html5boilerplate</a>, a theme by <a href="http://www.jeffreysambells.com" title="Web Designer / Developer">Jeffrey Sambells</a>. <a href="<?php bloginfo('rss2_url'); ?>" title="Syndicate this site using RSS"><acronym title="Really Simple Syndication">RSS</acronym> Feed</a>.</p>
 	</footer>
 <?php } 
 add_action('wp_footer', 'html5boilerplate_footer');

@@ -62,7 +62,7 @@ Jeffrey
 
   <div id="container">
     <header id="header">
-    	<a href="/"><img id="bookmark" src="http://jeffreysambells.com/wordpress/wp-content/themes/jeffreysambells2010/css/bookmark.png" alt="Jeffrey Sambells" width="72" height="114"></a>
+    	<a href="/"><img id="bookmark" src="<?php echo get_option('bookmark_image_url')?>" alt="<?php bloginfo('name'); ?> Bookmark"></a>
     
 		<h1><a href="<?php bloginfo('url'); ?>"><?php bloginfo('name'); ?></a></h1>
 
