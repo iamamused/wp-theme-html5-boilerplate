@@ -99,7 +99,7 @@ select, input, textarea, button { font:99% sans-serif; }
 /* normalize monospace sizing 
  * en.wikipedia.org/wiki/MediaWiki_talk:Common.css/Archive_11#Teletype_style_fix_for_Chrome
  */
-pre, code, kbd, samp { font-family: monospace, sans-serif; }
+pre, code, kbd, samp { font-family: "Consolas", monospace, sans-serif; }
  
 
 /* 
@@ -307,7 +307,7 @@ figcaption {
 
 /* Tweak the color and text-decoration. */
 a, a:active, a:visited { 
-	color: #607890 /* #c7392f */  ;
+	color: #2a427c;
 	text-decoration:none;
 	-webkit-transition: color .25s;
 }
@@ -318,6 +318,7 @@ a:hover {
 p a, p a:active, p a:visited { 
 	border-bottom: 1px solid transparent;
   	-webkit-transition: border-color .65s;
+  	font-weight: 500;
 }
 p a:hover { 
 	border-color: #607890 /* #c7392f */ ;
@@ -352,8 +353,7 @@ h4.date {
 	font-weight: 100;
 	font-style: italic;
 	font-size: 100%;
-	margin-left: -5%;
-	margin-top: 60px;
+	margin: 60px 0 40px 0;
 }
 /*
 h4.date:before {
@@ -378,7 +378,8 @@ article h1 a:after {
 /* Text Styles */
 p {
 	margin-bottom: 10px;
-	font-weight: 100;
+	font-weight: 300;
+	font-size: 93%;
 }
 em {
 	font-style: italic;
@@ -392,12 +393,12 @@ small {
 
 /* Code etc. */
 code {
-	color: #606328;
-	font-size: 85%;
+	color: #612608;
 }
 pre {
 	margin-bottom: 18px;
 	border: 1px solid #eaeaea;
+	font-size: 85%;
 }
 
 /* 	Lists and Blocks */
@@ -410,6 +411,8 @@ ul ul, ul ol, ol ul, ol ol {
 }
 li {
 	margin: 0px;
+	font-weight: 300;
+	margin: 0.6em 0;
 }
 
 /* Blockquote */
@@ -543,7 +546,8 @@ article footer,
 section.post footer
 {
 	padding: 3px 0px;
-	border-bottom: 3px double #eee;
+	border-bottom: 1px solid #eee;
+	border-top: 1px solid #eee;
 	font-size: 85%;
 }
 
@@ -554,7 +558,7 @@ article header figure {
 
 
 h1.offsite {
-	font-size:1.2em;
+	font-size:153.9%;
 	margin-bottom: 0.5em;
 }
 
