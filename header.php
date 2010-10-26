@@ -1,6 +1,10 @@
 <!doctype html>
 <!--
 
+Theme: HTML5 Bolierplate WordPress Theme
+Original Author: Jeffrey Sambells
+URL: http://github.com/iamamused/wp-theme-html5-boilerplate
+
 Like this theme? Want to "borrow" aspects of it? No Problem!
 
 This theme is based on the http://html5boilerplate.com project and can
