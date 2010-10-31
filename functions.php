@@ -194,7 +194,7 @@ add_action('save_post', 'html5boilerplate_save_details');
 
 function html5boilerplate_the_permalink_rss($file) {
 	$custom_fields = get_post_custom();
-	if ( !@empty($custom_fields['h5bp_link_url']) ) {
+	if ( !@empty($custom_fields['h5bp_link_url'][0]) ) {
 		return $custom_fields['h5bp_link_url'][0];
 	}
 	return $file;
@@ -204,7 +204,7 @@ add_filter('the_permalink_rss', 'html5boilerplate_the_permalink_rss');
 function html5boilerplate_rss_footers($content) {
 	$custom_fields = get_post_custom();
 	if ( !@empty($custom_fields['h5bp_link_url']) ) {
-    	return $content .= '<p><a href="' . get_permalink() . '">Permalink</a></p>';
+    	return $content .= '<p><a href="' . get_permalink() . '">&#9734; Permalink</a></p>';
     }
     return $content;
 }
@@ -220,6 +220,16 @@ function html5boilerplate_rss_post_thumbnail($content) {
 }
 add_filter('the_excerpt_rss', 'html5boilerplate_rss_post_thumbnail');
 add_filter('the_content_feed', 'html5boilerplate_rss_post_thumbnail');
+
+// Adds a start infront of the rss post title if it's not an off-site link.
+function html5boilerplate_rss_post_title($content) {
+	$custom_fields = get_post_custom();
+	if ( @empty($custom_fields['h5bp_link_url'][0]) ) {
+		$content = '&#9734; ' . $content;
+	}
+	return $content;
+}
+add_filter('the_title_rss', 'html5boilerplate_rss_post_title');
 
 ////////////////
 // Theme Options
