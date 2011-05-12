@@ -58,6 +58,9 @@ Jeffrey
 
   <!-- wp_head() content added by plugins etc. -->	
   <?php wp_head(); ?>
+
+  <!-- Thanks Advent-Calendar -->
+  <link rel="stylesheet" href="http://f.fontdeck.com/s/css/D8Fz3XWt+VC0VDejQHe7Mks5Qzc/jeffreysambells.com/3438.css" type="text/css" />
   
 </head>
 
