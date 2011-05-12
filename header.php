@@ -59,8 +59,8 @@ Jeffrey
   <!-- wp_head() content added by plugins etc. -->	
   <?php wp_head(); ?>
 
-  <!-- Thanks Advent-Calendar -->
-  <link rel="stylesheet" href="http://f.fontdeck.com/s/css/D8Fz3XWt+VC0VDejQHe7Mks5Qzc/jeffreysambells.com/3438.css" type="text/css" />
+	<link  href="http://fonts.googleapis.com/css?family=Damion:regular" rel="stylesheet" type="text/css" >
+	<link  href="http://fonts.googleapis.com/css?family=Anton:regular" rel="stylesheet" type="text/css" >
   
 </head>
 
@@ -69,7 +69,7 @@ Jeffrey
 
   <div id="container">
     <header id="header">
-    	<a href="/"><img id="bookmark" src="<?php echo get_option('bookmark_image_url')?>" alt="<?php bloginfo('name'); ?> Bookmark"></a>
+    	<a href="/"><img id="bookmark" src="<?php /* echo get_option('bookmark_image_url') */ ?><?php bloginfo('template_url'); ?>/images/bookmark.png" alt="<?php bloginfo('name'); ?> Bookmark"></a>
     
 		<h1><a href="<?php bloginfo('url'); ?>"><?php bloginfo('name'); ?></a></h1>
 

@@ -11,227 +11,182 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 */
 
 /* If you're using CSSEdit enter overrides here */
+
 /* @override 
 	http://dev.jeffreysambells.com/wordpress/wp-content/themes/html5boilerplate-wordpress-theme/style.css?v=1
 	http://jeffreysambells.com/wordpress/wp-content/themes/html5boilerplate-wordpress-theme/style.css?v=1
+	http://jeffreysambells.com/wordpress/wp-content/themes/wp-theme-html5-boilerplate/style.css?v=1
 */
 
-/* 
-  style.css contains a reset, font normalization and some base styles.
-  
-  credit is left where credit is due.
-  additionally, much inspiration was taken from these projects:
-    yui.yahooapis.com/2.8.1/build/base/base.css
-    camendesign.com/design/
-    praegnanz.de/weblog/htmlcssjs-kickstart
-*/
+/**
+ * HTML5 ✰ Boilerplate
+ *
+ * style.css contains a reset, font normalization and some base styles.
+ *
+ * Credit is left where credit is due.
+ * Much inspiration was taken from these projects:
+ * - yui.yahooapis.com/2.8.1/build/base/base.css
+ * - camendesign.com/design/
+ * - praegnanz.de/weblog/htmlcssjs-kickstart
+ */
 
-/* 
-  html5doctor.com Reset Stylesheet (Eric Meyer's Reset Reloaded + HTML5 baseline)
-  v1.4 2009-07-27 | Authors: Eric Meyer & Richard Clark
-  html5doctor.com/html-5-reset-stylesheet/
-*/
+
+/**
+ * html5doctor.com Reset Stylesheet (Eric Meyer's Reset Reloaded + HTML5 baseline)
+ * v1.6.1 2010-09-17 | Authors: Eric Meyer & Richard Clark
+ * html5doctor.com/html-5-reset-stylesheet/
+ */
 
 html, body, div, span, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-abbr, address, cite, code,
-del, dfn, em, img, ins, kbd, q, samp,
-small, strong, sub, sup, var,
-b, i,
-dl, dt, dd, ol, ul, li,
+abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp,
+small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li,
 fieldset, form, label, legend,
 table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, figcaption, figure, 
+article, aside, canvas, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section, summary,
 time, mark, audio, video {
-  margin:0;
-  padding:0;
-  border:0;
-  outline:0;
-  font-size:100%;
-  vertical-align:baseline;
-  background:transparent;
-}                  
-
-article, aside, details, figcaption, figure,
-footer, header, hgroup, menu, nav, section { 
-    display:block;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  vertical-align: baseline;
 }
 
-nav ul { list-style:none; }
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
 
-blockquote, q { quotes:none; }
+blockquote, q { quotes: none; }
 
 blockquote:before, blockquote:after,
-q:before, q:after { content:''; content:none; }
+q:before, q:after { content: ""; content: none; }
 
-a { margin:0; padding:0; font-size:100%; vertical-align:baseline; background:transparent; }
+ins { background-color: #ff9; color: #000; text-decoration: none; }
 
-ins { background-color:#ff9; color:#000; text-decoration:none; }
-
-mark { background-color:#ff9; color:#000; font-style:italic; font-weight:bold; }
+mark { background-color: #ff9; color: #000; font-style: italic; font-weight: bold; }
 
 del { text-decoration: line-through; }
 
-abbr[title], dfn[title] { border-bottom:1px dotted; cursor:help; }
+abbr[title], dfn[title] { border-bottom: 1px dotted; cursor: help; }
 
-/* tables still need cellspacing="0" in the markup */
-table { border-collapse:collapse; border-spacing:0; }
+table { border-collapse: collapse; border-spacing: 0; }
 
-hr { display:block; height:1px; border:0; border-top:1px solid #ccc; margin:1em 0; padding:0; }
-
-input, select { vertical-align:middle; }
-/* END RESET CSS */
+hr { display: block; height: 1px; border: 0; border-top: 1px solid #ccc; margin: 1em 0; padding: 0; }
 
 
-/* fonts.css from the YUI Library: developer.yahoo.com/yui/
-   Please refer to developer.yahoo.com/yui/fonts/ for font sizing percentages
-
-  There are three custom edits:
-   * remove arial, helvetica from explicit font stack
-   * we normalize monospace styles ourselves
-   * table font-size is reset in the HTML5 reset above so there is no need to repeat
-*/
-body { font:13px/1.231 sans-serif; *font-size:small; } /* hack retained to preserve specificity */
-
-select, input, textarea, button { font:99% sans-serif; }
-
-/* normalize monospace sizing 
- * en.wikipedia.org/wiki/MediaWiki_talk:Common.css/Archive_11#Teletype_style_fix_for_Chrome
- */
-pre, code, kbd, samp { font-family: "Consolas", monospace, sans-serif; }
- 
-
-/* 
- * minimal base styles 
+/**
+ * Font normalization inspired by YUI Library's fonts.css: developer.yahoo.com/yui/
  */
 
+body { font:13px/1.231 sans-serif; *font-size:small; } /* Hack retained to preserve specificity */
 
-body, select, input, textarea { 
-  /* #444 looks better than black: twitter.com/H_FJ/statuses/11800719859 */ 
-  color: #444; 
-  /* set your base font here, to apply evenly 
-  /* font-family: Georgia, serif;  */   
-}
+/* Normalize monospace sizing:
+   en.wikipedia.org/wiki/MediaWiki_talk:Common.css/Archive_11#Teletype_style_fix_for_Chrome */
+pre, code, kbd, samp { font-family: monospace, sans-serif; }
 
-/* Headers (h1,h2,etc) have no default font-size or margin,
-   you'll want to define those yourself. */ 
-h1,h2,h3,h4,h5,h6 { font-weight: bold; }
 
-/* always force a scrollbar in non-IE */ 
-html { overflow-y: scroll; }
+/**
+ * Minimal base styles.
+ */
 
- 
+/* 1) Always force a scrollbar in non-IE 
+   2) Remove iOS text size adjust without disabling user zoom: www.456bereastreet.com/archive/201012/controlling_text_size_in_safari_for_ios_without_disabling_user_zoom/ */
+html { overflow-y: scroll; -webkit-text-size-adjust:100%; -ms-text-size-adjust:100%; }
+  
+/* j.mp/webkit-tap-highlight-color */
+a:link { -webkit-tap-highlight-color: #FF5E99; }
+
 /* Accessible focus treatment: people.opera.com/patrickl/experiments/keyboard/test */
 a:hover, a:active { outline: none; }
 
 a, a:active, a:visited { color: #607890; }
 a:hover { color: #036; }
 
-
-ul, ol { margin-left: 1.8em; }
+ul, ol { margin-left: 2em; }
 ol { list-style-type: decimal; }
+
+/* Remove margins for navigation lists */
+nav ul, nav li { margin: 0; list-style:none; list-style-image: none; }
 
 small { font-size: 85%; }
 strong, th { font-weight: bold; }
 
-td, td img { vertical-align: top; } 
+td { vertical-align: top; }
 
-sub { vertical-align: sub; font-size: smaller; }
-sup { vertical-align: super; font-size: smaller; }
+/* Set sub, sup without affecting line-height: gist.github.com/413930 */
+sub, sup { font-size: 75%; line-height: 0; position: relative; }
+sup { top: -0.5em; }
+sub { bottom: -0.25em; }
 
-pre { 
-  padding: 15px; 
-  
+pre {
   /* www.pathf.com/blogs/2008/05/formatting-quoted-code-in-blog-posts-css21-white-space-pre-wrap/ */
-  white-space: pre; /* CSS2 */
-  white-space: pre-wrap; /* CSS 2.1 */
-  white-space: pre-line; /* CSS 3 (and 2.1 as well, actually) */
-  word-wrap: break-word; /* IE */
+  white-space: pre; white-space: pre-wrap; word-wrap: break-word;
+  padding: 15px;
 }
- 
-textarea { overflow: auto; } /* thnx ivannikolic! www.sitepoint.com/blogs/2010/08/20/ie-remove-textarea-scrollbars/ */
 
-.ie6 legend, .ie7 legend { margin-left: -7px; } /* thnx ivannikolic! */
+.ie6 legend, .ie7 legend { margin-left: -7px; } 
 
-/* align checkboxes, radios, text inputs with their label
-   by: Thierry Koblentz tjkdesign.com/ez-css/css/base.css  */
-input[type="radio"] { vertical-align: text-bottom; }
-input[type="checkbox"] { vertical-align: bottom; }
-.ie7 input[type="checkbox"] { vertical-align: baseline; }
-.ie6 input { vertical-align: text-bottom; }
+/* 1) Make inputs and buttons play nice in IE: www.viget.com/inspire/styling-the-button-element-in-internet-explorer/
+   2) WebKit browsers add a 2px margin outside the chrome of form elements. 
+      Firefox adds a 1px margin above and below textareas 
+   3) Set font-size to match <body>'s, and font-family to sans-serif 
+   4) Align to baseline */
+button, input, select, textarea { width: auto; overflow: visible; margin: 0; font-size: 100%; font-family: sans-serif; vertical-align: baseline; }
 
-/* hand cursor on clickable input elements */
-label, input[type=button], input[type=submit], button { cursor: pointer; }
- 
-/* webkit browsers add a 2px margin outside the chrome of form elements */  
-button, input, select, textarea { margin: 0; }
+/* 1) Remove default scrollbar in IE: www.sitepoint.com/blogs/2010/08/20/ie-remove-textarea-scrollbars/
+   2) Align to text-top */
+textarea { overflow: auto; vertical-align:text-top; }
 
-/* colors for form validity */
-input:valid, textarea:valid   {  }
-input:invalid, textarea:invalid { 
-      border-radius: 1px;
-    -moz-box-shadow: 0px 0px 5px red; 
- -webkit-box-shadow: 0px 0px 5px red; 
-         box-shadow: 0px 0px 5px red;
-}
-.no-boxshadow input:invalid, 
-.no-boxshadow textarea:invalid { background-color: #f0dddd; }
+/* Hand cursor on clickable input elements */
+label, input[type="button"], input[type="submit"], input[type="image"], button { cursor: pointer; }
 
+/* Remove extra padding and inner border in Firefox */
+input::-moz-focus-inner,
+button::-moz-focus-inner { border: 0; padding: 0; }
 
-/* These selection declarations have to be separate.
-   No text-shadow: twitter.com/miketaylr/status/12228805301 
-   Also: hot pink. */
-::-moz-selection{ background: #FF5E99; color:#fff; text-shadow: none; }
-::selection { background:#FF5E99; color:#fff; text-shadow: none; } 
+/* Colors for form validity */
+input:valid, textarea:valid {  }
+input:invalid, textarea:invalid { border-radius: 1px; -moz-box-shadow: 0px 0px 5px red; -webkit-box-shadow: 0px 0px 5px red; box-shadow: 0px 0px 5px red; }
+.no-boxshadow input:invalid, .no-boxshadow textarea:invalid { background-color: #f0dddd; }
 
-/*  j.mp/webkit-tap-highlight-color */
-a:link { -webkit-tap-highlight-color: #FF5E99; } 
-
-/* make buttons play nice in IE:    
-   www.viget.com/inspire/styling-the-button-element-in-internet-explorer/ */
-button {  width: auto; overflow: visible; }
- 
-/* bicubic resizing for non-native sized IMG: 
+/* Bicubic resizing for non-native sized IMG:
    code.flickr.com/blog/2008/11/12/on-ui-quality-the-little-things-client-side-image-resizing/ */
 .ie7 img { -ms-interpolation-mode: bicubic; }
 
 
-
-/* 
- * Non-semantic helper classes 
+/**
+ * You might tweak these..
  */
 
-/* for image replacement */
-.ir { display: block; text-indent: -999em; overflow: hidden; background-repeat: no-repeat; text-align: left; direction: ltr; }
+body, select, input, textarea {
+  /* #444 looks better than black: twitter.com/H_FJ/statuses/11800719859 */
+  color: #dddddd;
+  /* Set your base font here, to apply evenly */
+  /* font-family: Georgia, serif;  */
+  	font-family:Helvetica, 'Helvetica Neue', Helvetica, sans-serif; 
 
-/* Hide for both screenreaders and browsers
-   css-discuss.incutio.com/wiki/Screenreader_Visibility */
-.hidden { display: none; visibility: hidden; } 
+}
 
-/* Hide only visually, but have it available for screenreaders 
-   www.webaim.org/techniques/css/invisiblecontent/ 
-   Solution from: j.mp/visuallyhidden - Thanks Jonathan Neal! */
-.visuallyhidden { position: absolute !important;    
-  clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
-  clip: rect(1px, 1px, 1px, 1px); }
+/* Headers (h1, h2, etc) have no default font-size or margin; define those yourself */
+h1, h2, h3, h4, h5, h6 { font-weight: bold; }
 
-/* Hide visually and from screenreaders, but maintain layout */
-.invisible { visibility: hidden; }
+/* These selection declarations have to be separate
+   No text-shadow: twitter.com/miketaylr/status/12228805301
+   Also: hot pink! */
+::-moz-selection{ background: #FF5E99; color:#fff; text-shadow: none; }
+::selection { background:#FF5E99; color:#fff; text-shadow: none; }
 
-/* >> The Magnificent CLEARFIX << j.mp/phayesclearfix */
-.clearfix:after  { content: "\0020"; display: block; height: 0; clear: both; visibility: hidden; }
-/* Fix clearfix: blueprintcss.lighthouseapp.com/projects/15318/tickets/5-extra-margin-padding-bottom-of-page */
-.clearfix { zoom: 1; }
-
-
-
-
-
-
- /* Primary Styles
-    Author: Jeffrey Sambells
+/**
+ * Primary styles
+ *
+ * Author: Jeffrey Sambells
  */
+
+
+
+
 
 /*
 http://css-tricks.com/box-sizing/
@@ -253,12 +208,11 @@ textarea {
 
 hr { 
 	/* HR are in place only for non css devices. */
-	display:none; 
 }
 
 html {
-	/* background: url(images/bg-bond5.png); */
-	}
+	background: #2e2e2e;
+}
 
 body {
 	/* Let's go with minimist fonts */
@@ -266,7 +220,6 @@ body {
 	margin: 0px 20%;
 	
 	/* Font-deck */
-	font-family:"Proxima Nova Light", 'Helvetica Neue', Arial, Helvetica, sans-serif; 
 	font-size-adjust:0.488; 
 	font-weight:200; 
 	font-style:normal;
@@ -282,7 +235,6 @@ figure {
 
 figcaption {
 	font-style: italic;
-	color: #aaa;
 }
 
 /* fluid width images http://css-tricks.com/fluid-width-youtube-videos/ */
@@ -313,21 +265,22 @@ figcaption {
 
 /* Tweak the color and text-decoration. */
 a, a:active, a:visited { 
-	color: #2a427c;
 	text-decoration:none;
 	-webkit-transition: color .25s;
+	color: #00ae2a;
+
 }
 a:hover { 
-	color: #607890 /* #c7392f */ ;
+	color: #00ee3d;
 }
 /* We'll underline the paragraph links. */
 p a, p a:active, p a:visited { 
 	border-bottom: 1px solid transparent;
-  	-webkit-transition: border-color .65s;
+  	-webkit-transition: border-color .25s;
   	font-weight: 500;
 }
 p a:hover { 
-	border-color: #607890 /* #c7392f */ ;
+	border-color: #00ae2a;
 }
 
 /* Headers */
@@ -335,7 +288,6 @@ h1 {
 	font-size: 182%;
 	line-height: 1.3em;
 	font-weight: 700;
-	color: #444;
 	letter-spacing: 0.05em;
 
 }
@@ -348,24 +300,21 @@ h2 {
 	font-size: 123.1%;
 	line-height: 1.3em;
 	margin-bottom: 5px;
-	color: #000;
 }
 h3 {
 	font-size: 93%;
 	margin-bottom: 4px;
 }
 h4.date {
-	color: #444;
 	font-weight: 100;
 	font-style: italic;
 	font-size: 100%;
-	margin: 60px 0 40px 0;
+	margin: 60px 0 0px 0;
 }
 /*
 h4.date:before {
 	margin-right: .5em;
 	content: "★";	
-	color: #ccc;
 }
 */
 h1 a, h1 a:active, h1 a:visited,
@@ -377,7 +326,6 @@ h2 a, h2 a:active, h2 a:visited {
 article h1 a:after {
 	margin-left: 0.3em;
 	content: "★";	
-	color: #ccc;
 }
 */
 
@@ -385,7 +333,7 @@ article h1 a:after {
 p {
 	margin-bottom: 10px;
 	font-weight: 300;
-	font-size: 93%;
+	line-height: 1.5em;
 }
 em {
 	font-style: italic;
@@ -399,12 +347,26 @@ small {
 
 /* Code etc. */
 code {
-	color: #612608;
+	color: #d0cd65;
 }
 pre {
 	margin-bottom: 18px;
-	border: 1px solid #eaeaea;
 	font-size: 85%;
+	
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	-o-border-radius: 3px;
+	-ms-border-radius: 3px;
+	-khtml-border-radius: 3px;
+	border-radius: 3px;
+	-moz-box-sizing: content-box;
+	-webkit-box-sizing: content-box;
+	-ms-box-sizing: content-box;
+	box-sizing: content-box;
+	padding: 20px;
+	background: rgba(0, 0, 0, 0.3);
+	-webkit-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.1), 0 0 8px rgba(0, 0, 0, 0.9) inset;
+
 }
 
 /* 	Lists and Blocks */
@@ -423,8 +385,7 @@ li {
 
 /* Blockquote */
 blockquote {
-	color: #5c6119;
-	border-left: 2px solid #e7ebe1;
+	border-left: 2px solid #ddd;
 	margin: 20px;
 	padding-left: 10px;
 	margin-left: -12px; /* shift left so text aligns with left */
@@ -444,13 +405,12 @@ blockquote * {
 }
 cite {
 	font-size: 80%;
-	color: #444;
 }
 cite:before {
 	content: "Source: ";
 }
 cite * {
-	color: inherit;
+
 }
 
 /* Navigation */
@@ -464,7 +424,7 @@ nav li {
 nav li:before {
 	margin-right: 5px;
 	content: "★";	
-	color: #ccc;
+	color: #656155;
 }
 
 #header nav li:before {
@@ -474,7 +434,7 @@ nav li:before {
 #header nav li:after {
 	margin-left: 5px;
 	content: "★";	
-	color: #ccc;
+	color: #656155;
 }
 #header nav li:last-of-type:after {
 	content: "";	
@@ -486,13 +446,11 @@ table { }
 table caption {
 	font-weight: 700;
 	background: #999;
-	color: #fff;
 	margin: 4px;
 	border-radius:10px; 
 	-webkit-border-radius:10px;
 }
 th {
-	background:#ccc;
 	padding: 3px;
 }
 td {
@@ -511,10 +469,8 @@ dialog {
 dialog dt {
 	padding: 10px 0px;
 	font-weight: 500;
-	color: #999;
 }
 dialog dt time {
-	color: #ccc;
 }
 dialog dt a {
 	color: inherit;
@@ -537,7 +493,7 @@ textarea#comment {
 article, 
 section.post {
 	margin: 0px;
-	padding: 40px 0;
+	padding: 10px 0 30px 0;
 	/* border-bottom: 1px solid #eee; */
 }
 article header,
@@ -552,9 +508,15 @@ article footer,
 section.post footer
 {
 	padding: 3px 0px;
-	border-bottom: 1px solid #eee;
-	border-top: 1px solid #eee;
-	font-size: 85%;
+	border-bottom: 1px solid #656155;
+	border-top: 1px solid #656155;
+	font-size: 93%;
+	color: #656155;
+}
+
+article footer a,
+section.post footer a {
+	color: inherit;
 }
 
 
@@ -571,7 +533,6 @@ h1.offsite {
 
 /* Dates */
 article header time {
-	color: #ccc;
 	font-weight: 700;
 	display: block;
 	font-size: 77%;
@@ -601,7 +562,6 @@ article section > p:nth-of-type(2) {
 article section > p:last-of-type:after {
 	margin-left: 5px;
 	content: "☆";	
-	color: #444;
 }
 	
 
@@ -615,7 +575,6 @@ article section > p:last-of-type:after {
 /* navigation */
 
 #header {
-	color: #929292;
 	margin: 70px 0 0px 0;
 	clear: both;
 }
@@ -636,7 +595,17 @@ article section > p:last-of-type:after {
 	color:inherit;
 }
 #header h1 a {
-	color: #607890 /* #c7392f */  ;
+	color: inherit;
+	font-family: 'Anton', serif;
+	font-size: 36px;
+	font-style: normal;
+	font-weight: 500;
+	text-shadow: none;
+	text-decoration: none;
+	text-transform: none;
+	letter-spacing: 0em;
+	word-spacing: 0em;
+	line-height: 1.2;
 } 
 #header h1 span {
 	font-weight: 500;
@@ -646,10 +615,9 @@ article section > p:last-of-type:after {
 	font-size: 12px;
 }
 #header nav a {
-	color:inherit;
+	color:#656155;	
 }
 #header nav a:hover {
-	color:#036;
 	text-decoration: underline;
 }
 
@@ -679,34 +647,40 @@ input[type=text] {
 }
 
 
-/* 
- * print styles
- * inlined to avoid required HTTP connection www.phpied.com/delay-loading-your-print-css/ 
+/**
+ * Non-semantic helper classes: please define your styles before this section.
  */
-@media print {
-  * { background: transparent !important; color: #444 !important; text-shadow: none !important; }
 
-  a, a:visited { color: #444 !important; text-decoration: underline; }
+/* For image replacement */
+.ir { display: block; text-indent: -999em; overflow: hidden; background-repeat: no-repeat; text-align: left; direction: ltr; }
 
-  a:after { content: " (" attr(href) ")"; } 
+/* Hide for both screenreaders and browsers:
+   css-discuss.incutio.com/wiki/Screenreader_Visibility */
+.hidden { display: none; visibility: hidden; }
 
-  abbr:after { content: " (" attr(title) ")"; }
-  
-  .ir a:after { content: ""; }  /* Don't show links for images */
-  
-  pre, blockquote { border: 1px solid #999; page-break-inside: avoid; }
-  
-  thead { display: table-header-group; } /* css-discuss.incutio.com/wiki/Printing_Tables */ 
-  
-  tr, img { page-break-inside: avoid; }
+/* Hide only visually, but have it available for screenreaders: by Jon Neal.
+  www.webaim.org/techniques/css/invisiblecontent/  &  j.mp/visuallyhidden */
+.visuallyhidden { border: 0; clip: rect(0 0 0 0); height: 1px; margin: -1px; overflow: hidden; padding: 0; position: absolute; width: 1px; }
+/* Extends the .visuallyhidden class to allow the element to be focusable when navigated to via the keyboard: drupal.org/node/897638 */
+.visuallyhidden.focusable:active,
+.visuallyhidden.focusable:focus { clip: auto; height: auto; margin: 0; overflow: visible; position: static; width: auto; }
 
-  @page { margin: 0.5cm; }
+/* Hide visually and from screenreaders, but maintain layout */
+.invisible { visibility: hidden; }
 
-  p, h2, h3 { orphans: 3; widows: 3; }
+/* The Magnificent Clearfix: Updated to prevent margin-collapsing on child elements in most situations.
+   nicolasgallagher.com/micro-clearfix-hack/ */
+.clearfix:before, .clearfix:after { content: ""; display: table; }
+.clearfix:after { clear: both; }
+.clearfix { zoom: 1; }
 
-  h2, h3{ page-break-after: avoid; }
-}
 
+
+/**
+ * Placeholder media queries for responsive design. Modify as design requires.
+ * These follow after, and will override, the primary ('mobile first') styles
+ * The closing /mediaquery comment is required by respond.js min/max-width Media Query polyfill
+ */
 
 
 /*
@@ -758,7 +732,6 @@ input[type=text] {
 	#header nav li:before {
 		margin-right: 5px;
 		content: "★";	
-		color: #ccc;
 	}
 	#header nav li:after {
 		margin-left: 0px;
@@ -767,7 +740,6 @@ input[type=text] {
 	#header nav li:last-of-type:after {
 		margin-left: 5px;
 		content: "★";	
-		color: #ccc;
 	}
 	
 	h4.date {
@@ -798,4 +770,25 @@ input[type=text] {
 	}
 
   
+}
+
+/**
+ * Print styles.
+ *
+ * Inlined to avoid required HTTP connection: www.phpied.com/delay-loading-your-print-css/
+ */
+@media print {
+  * { background: transparent !important; color: black !important; text-shadow: none !important; filter:none !important;
+  -ms-filter: none !important; } /* Black prints faster: sanbeiji.com/archives/953 */
+  a, a:visited { color: #444 !important; text-decoration: underline; }
+  a[href]:after { content: " (" attr(href) ")"; }
+  abbr[title]:after { content: " (" attr(title) ")"; }
+  .ir a:after, a[href^="javascript:"]:after, a[href^="#"]:after { content: ""; }  /* Don't show links for images, or javascript/internal links */
+  pre, blockquote { border: 1px solid #999; page-break-inside: avoid; }
+  thead { display: table-header-group; } /* css-discuss.incutio.com/wiki/Printing_Tables */
+  tr, img { page-break-inside: avoid; }
+  img { max-width: 100% !important; }
+  @page { margin: 0.5cm; }
+  p, h2, h3 { orphans: 3; widows: 3; }
+  h2, h3{ page-break-after: avoid; }
 }
