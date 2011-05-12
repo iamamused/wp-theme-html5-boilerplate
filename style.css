@@ -575,7 +575,7 @@ article section > p:last-of-type:after {
 /* navigation */
 
 #header {
-	margin: 70px 0 0px 0;
+	margin: 88px 0 0px 0;
 	clear: both;
 }
 #footer {
@@ -586,7 +586,7 @@ article section > p:last-of-type:after {
 #bookmark {
 	float:right;
 	position: relative;
-	top: -70px;
+	top: -88px;
 	right: 112%;
 	margin-bottom: -50px;
 }
