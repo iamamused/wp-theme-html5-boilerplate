@@ -162,7 +162,7 @@ input:invalid, textarea:invalid { border-radius: 1px; -moz-box-shadow: 0px 0px 5
 
 body, select, input, textarea {
   /* #444 looks better than black: twitter.com/H_FJ/statuses/11800719859 */
-  color: #dddddd;
+  color: #c2c2c2;
   /* Set your base font here, to apply evenly */
   /* font-family: Georgia, serif;  */
   	font-family:Helvetica, 'Helvetica Neue', Helvetica, sans-serif; 
@@ -296,11 +296,13 @@ article h1 {
 	letter-spacing: 0;
 }
 h2 {
+	margin-top: 1.5em;
 	font-size: 123.1%;
 	line-height: 1.3em;
 	margin-bottom: 5px;
 }
 h3 {
+	margin-top: 1.5em;
 	font-size: 93%;
 	margin-bottom: 4px;
 }
@@ -319,6 +321,9 @@ h4.date:before {
 h1 a, h1 a:active, h1 a:visited,
 h2 a, h2 a:active, h2 a:visited { 
 	color: inherit;
+	
+
+
 }
 
 h1 .permalink {
@@ -441,6 +446,10 @@ nav li:before {
 }
 #header nav li:last-of-type:after {
 	content: "";	
+}
+
+.menu-item-757 a {
+	color: #da5835 !important;
 }
 
 
@@ -582,7 +591,7 @@ article section > p:last-of-type:after {
 /* navigation */
 
 #header {
-	margin: 88px 0 0px 0;
+	margin: 88px 0 90px 0;
 	clear: both;
 }
 #footer {
@@ -618,7 +627,7 @@ article section > p:last-of-type:after {
 	font-weight: 500;
 }
 #header nav {
-	margin: 2px 0 50px 0;
+	margin: 2px 0 0px 0;
 	font-size: 12px;
 }
 #header nav a {
@@ -755,7 +764,6 @@ input[type=text] {
 		border-bottom: 2px dotted #ccc;
 		border-top: 2px dotted #ccc;
 		padding: 6px;
-		background: #efefef;
 	}
 	
 	article, 
