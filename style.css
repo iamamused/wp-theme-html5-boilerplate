@@ -267,11 +267,10 @@ figcaption {
 a, a:active, a:visited { 
 	text-decoration:none;
 	-webkit-transition: color .25s;
-	color: #00ae2a;
-
+	color: #d0cd65;
 }
 a:hover { 
-	color: #00ee3d;
+	color: #f700a9;
 }
 /* We'll underline the paragraph links. */
 p a, p a:active, p a:visited { 
@@ -280,7 +279,7 @@ p a, p a:active, p a:visited {
   	font-weight: 500;
 }
 p a:hover { 
-	border-color: #00ae2a;
+	border-color: #f700a9;
 }
 
 /* Headers */
@@ -322,6 +321,10 @@ h2 a, h2 a:active, h2 a:visited {
 	color: inherit;
 }
 
+h1 .permalink {
+	color: #656155;	
+}
+
 /*
 article h1 a:after {
 	margin-left: 0.3em;
@@ -347,7 +350,7 @@ small {
 
 /* Code etc. */
 code {
-	color: #d0cd65;
+	color: #00ae2a;
 }
 pre {
 	margin-bottom: 18px;
@@ -462,7 +465,7 @@ tr:nth-child(even) {
 
 dialog {
 	display:block;
-	border-top: 2px solid #eaeaea;
+	border-top: 1px solid #656155;
 	border-bottom: 2px solid #eaeaea;
 	margin: 10px 0 20px 0;
 }
@@ -477,7 +480,7 @@ dialog dt a {
 }
 dialog dd {
 	padding: 10px 20px;
-	border-bottom: 2px solid #eaeaea;
+	border-top: 1px solid #656155;
 	font-style: italic;
 }
 
@@ -507,16 +510,19 @@ article header h1 {
 article footer,
 section.post footer
 {
-	padding: 3px 0px;
+	padding: 13px 0px 5px 0;
+	/*
 	border-bottom: 1px solid #656155;
 	border-top: 1px solid #656155;
+	*/
+	border-bottom: 1px solid #656155;
 	font-size: 93%;
 	color: #656155;
 }
 
 article footer a,
 section.post footer a {
-	color: inherit;
+	color: #aaa390;
 }
 
 
@@ -562,6 +568,7 @@ article section > p:nth-of-type(2) {
 article section > p:last-of-type:after {
 	margin-left: 5px;
 	content: "☆";	
+	color: #656155;
 }
 	
 
@@ -615,7 +622,7 @@ article section > p:last-of-type:after {
 	font-size: 12px;
 }
 #header nav a {
-	color:#656155;	
+	color: #aaa390;	
 }
 #header nav a:hover {
 	text-decoration: underline;
