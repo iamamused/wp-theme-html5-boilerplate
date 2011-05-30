@@ -101,8 +101,8 @@ a:link { -webkit-tap-highlight-color: #FF5E99; }
 /* Accessible focus treatment: people.opera.com/patrickl/experiments/keyboard/test */
 a:hover, a:active { outline: none; }
 
-a, a:active, a:visited { color: #607890; }
-a:hover { color: #036; }
+a, a:active, a:visited { color: inherit; }
+a:hover { color: inherit; }
 
 ul, ol { margin-left: 2em; }
 ol { list-style-type: decimal; }
@@ -208,6 +208,8 @@ textarea {
 
 hr { 
 	/* HR are in place only for non css devices. */
+	border-top: 1px solid #000;
+	background: #434343;
 }
 
 html {
@@ -231,10 +233,12 @@ body {
 
 figure {
 	text-align: center;
+	margin: 2em 1em 3em;
 }
 
 figcaption {
 	font-style: italic;
+	color: #656155;
 }
 
 /* fluid width images http://css-tricks.com/fluid-width-youtube-videos/ */
@@ -267,17 +271,18 @@ figcaption {
 a, a:active, a:visited { 
 	text-decoration:none;
 	-webkit-transition: color .25s;
-	color: #d0cd65;
 }
 a:hover { 
 	color: #f700a9;
 }
 /* We'll underline the paragraph links. */
+#main li a, #main li a:active, #main li a:visited,
 p a, p a:active, p a:visited { 
-	border-bottom: 1px solid transparent;
+	border-bottom: 1px dotted #686868;
   	-webkit-transition: border-color .25s;
   	font-weight: 500;
 }
+#main li a:hover,
 p a:hover { 
 	border-color: #f700a9;
 }
@@ -310,7 +315,7 @@ h4.date {
 	font-weight: 100;
 	font-style: italic;
 	font-size: 100%;
-	margin: 60px 0 0px 0;
+	margin: 60px 0 60px 0;
 }
 /*
 h4.date:before {
@@ -321,9 +326,6 @@ h4.date:before {
 h1 a, h1 a:active, h1 a:visited,
 h2 a, h2 a:active, h2 a:visited { 
 	color: inherit;
-	
-
-
 }
 
 h1 .permalink {
@@ -341,7 +343,7 @@ article h1 a:after {
 p {
 	margin-bottom: 10px;
 	font-weight: 300;
-	line-height: 1.5em;
+	line-height: 1.8em;
 }
 em {
 	font-style: italic;
@@ -355,10 +357,10 @@ small {
 
 /* Code etc. */
 code {
-	color: #00ae2a;
+	color: #4b9856;
 }
 pre {
-	margin-bottom: 18px;
+	margin: 3em 1em;
 	font-size: 85%;
 	
 	-moz-border-radius: 3px;
@@ -372,8 +374,8 @@ pre {
 	-ms-box-sizing: content-box;
 	box-sizing: content-box;
 	padding: 20px;
-	background: rgba(0, 0, 0, 0.3);
-	-webkit-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.1), 0 0 8px rgba(0, 0, 0, 0.9) inset;
+	background: rgba(0, 0, 0, 0.2);
+	-webkit-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.05), 0 0 8px rgba(0, 0, 0, 0.4) inset;
 
 }
 
@@ -393,11 +395,12 @@ li {
 
 /* Blockquote */
 blockquote {
-	border-left: 2px solid #ddd;
+	border-left: 2px solid #656055;
 	margin: 20px;
 	padding-left: 10px;
 	margin-left: -12px; /* shift left so text aligns with left */
 	width: 80%;
+	font-style: italic;
 }
 blockquote p:first-of-type:before {
 	content: "“";
@@ -437,7 +440,7 @@ nav li:before {
 
 #header nav li:before {
 	margin-right: 0;
-	content: "";	
+	content: "";
 }
 #header nav li:after {
 	margin-left: 5px;
@@ -445,7 +448,7 @@ nav li:before {
 	color: #656155;
 }
 #header nav li:last-of-type:after {
-	content: "";	
+	content: "";
 }
 
 .menu-item-757 a {
@@ -511,6 +514,21 @@ section.post {
 article header,
 section.post header {
 	margin-bottom: 20px;
+	border-top: 1px solid black;
+	margin-top: 30px;
+}
+
+article header h1,
+section.post header h1 {
+	border-top:  1px solid #434343;
+	padding-top: 0.5em;
+}
+
+article p, 
+article li, 
+section.post p,
+section.post li {
+	/* color: #aca392; */
 }
 
 article header h1 {
@@ -524,7 +542,6 @@ section.post footer
 	border-bottom: 1px solid #656155;
 	border-top: 1px solid #656155;
 	*/
-	border-bottom: 1px solid #656155;
 	font-size: 93%;
 	color: #656155;
 }
@@ -651,17 +668,41 @@ section.image cite {
 }
 
 
+img.tag {
+	margin: 0; padding: 0; border: 0;
+	display: block;
+	float: left;
+	margin: 0 10px;
+}
+
 /* Forms */
 label {
 	display: block;
 	margin-top: 1em;
 	font-weight: 500;
+	color: #656155;
 }
 
 input[type=text] {
 	width: 63%;
 }
 
+select, input, textarea {
+  /* #444 looks better than black: twitter.com/H_FJ/statuses/11800719859 */
+  color: #c2c2c2;
+  background: #383838;
+  /* Set your base font here, to apply evenly */
+  /* font-family: Georgia, serif;  */
+  font-family:verdana, 'Helvetica Neue', Helvetica, sans-serif; 
+  border: 1px solid #656155;
+  padding: 0.25em;
+}
+
+#submit {
+	margin-top: 1em;
+	color: #656155;
+	padding: 0.5em 1em;
+}
 
 /**
  * Non-semantic helper classes: please define your styles before this section.

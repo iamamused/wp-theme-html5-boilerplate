@@ -3,10 +3,11 @@
 		<?php while (have_posts()) : the_post(); ?>
 				
 			<?php $custom_fields = get_post_custom(); ?>
+
+			<h4 class="date"><time datetime="<?php the_time('Y-m-d') ?>"><?php the_time('F j, Y') ?></time></h4>
 			
 			<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 				<header>
-					<time datetime="<?php the_time('Y-m-d') ?>"><?php the_time('F j, Y') ?></time>
 					<?php if ( !@empty($custom_fields['h5bp_link_url'][0]) ) : ?>
 					<h1 class="offsite"><a href="<?php 
 						echo $custom_fields['h5bp_link_url'][0];
