@@ -1,6 +1,4 @@
 
-<hr />
-
 <aside id="sidebar">
 	<?php if ( false && ( !function_exists('dynamic_sidebar') || !dynamic_sidebar() ) ) : ?>
 		<section>
@@ -13,5 +11,3 @@
 		</section>
 	<?php endif; ?>
 </aside>
-
-<hr />

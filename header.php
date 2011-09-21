@@ -49,13 +49,6 @@ Jeffrey
   <!-- CSS concatenated and minified via ant build script-->
   <link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>?v=1">
   
-  <!-- Fonts -->
-  <link href='http://fonts.googleapis.com/css?family=Bangers' rel='stylesheet' type='text/css'>
-  <link href='http://fonts.googleapis.com/css?family=IM+Fell+DW+Pica+SC' rel='stylesheet' type='text/css'>
-  <link href='http://fonts.googleapis.com/css?family=Neuton:300,400,700,400italic' rel='stylesheet' type='text/css'>
-  
-  <link  href="http://fonts.googleapis.com/css?family=Damion:regular" rel="stylesheet" type="text/css" >
-  <link  href="http://fonts.googleapis.com/css?family=Anton:regular" rel="stylesheet" type="text/css" >
 
   <!-- More ideas for your <head> here: h5bp.com/d/head-Tips -->
  
@@ -78,7 +71,7 @@ Jeffrey
   <div id="container">
     <header id="header">
     	<a href="/"><img id="bookmark" src="<?php /* echo get_option('bookmark_image_url') */ ?><?php bloginfo('template_url'); ?>/images/bookmark.png" alt="<?php bloginfo('name');?>">
-    		<nav><a href="">More</a></nav>
+    		<nav><a href="#footer">About Me</a></nav>
     </header>
     	
     <div id="main">

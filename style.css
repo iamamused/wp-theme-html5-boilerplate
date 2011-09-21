@@ -16,6 +16,17 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 	http://dev.jeffreysambells.com/wordpress/wp-content/themes/html5boilerplate-wordpress-theme/style.css?v=1
 */
 
+
+/*@import url(http://fonts.googleapis.com/css?family=Bangers);*/
+/*@import url(http://fonts.googleapis.com/css?family=IM+Fell+DW+Pica+SC);*/
+@import url(http://fonts.googleapis.com/css?family=Neuton:300,400,700,400italic);
+  
+/*@import url(http://fonts.googleapis.com/css?family=Damion:regular);*/
+/*@import url(http://fonts.googleapis.com/css?family=Anton:regular);*/
+  
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:300italic,300,400,600);
+
+
 /* 
  * HTML5 ✰ Boilerplate
  *
@@ -229,12 +240,99 @@ td { vertical-align: top; }
    Author: Jeffrey Sambells
    ========================================================================== */
 
+/* Some extra cleanup */
+
+/*
+http://css-tricks.com/box-sizing/
+Force <textarea> to have padding and border that cut into it’s 100% width instead of expanding it. 
+*/
+textarea {
+	-webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+	-moz-box-sizing: border-box;    /* Firefox, other Gecko */
+	box-sizing: border-box;         /* Opera/IE 8+ */
+}
+
+
+* {
+	/* Enable kerning and ligatures: http://www.aestheticallyloyal.com/public/optimize-legibility/ */
+	text-rendering: optimizeLegibility;
+}
+
+
+/* legacy */
+
+figure {
+	text-align: center;
+	margin: 2em 1em 3em;
+}
+
+figcaption {
+	font-style: italic;
+	color: #656155;
+}
+
+/* fluid width images http://css-tricks.com/fluid-width-youtube-videos/ */
+.img img, figure img {
+   max-width: 100%;
+   /* border: 1px solid #444; */
+}
+.img object, .img embed {
+   width: 100%;
+}
+
+.img img:hover, figure img:hover {
+  outline: none;
+  -webkit-transform: rotate(1.5deg) scale(1.05); 
+  -webkit-box-shadow: 0 3px 5px #666; 
+  -webkit-transition-property: rotate, scale, box-shadow;
+  -webkit-transition-duration: 0.5s, 0.5s, 0.5s;
+  
+  -moz-transform: rotate(1.5deg) scale(1.05);
+  -moz-box-shadow: 0 3px 5px #666;
+  z-index: 9999;
+}
+
+.img img, figure img {
+  -webkit-transition-property: rotate, scale, box-shadow;
+  -webkit-transition-duration: 0.3s, 0.3s, 0.3s;
+}
+
+/* Tweak the color and text-decoration. */
+a, a:active, a:visited { 
+	text-decoration:none;
+	-webkit-transition: color .25s;
+}
+/*a:hover { 
+	color: #f700a9;
+}*/
+/* We'll underline the paragraph links. */
+#main li a, #main li a:active, #main li a:visited,
+p a, p a:active, p a:visited { 
+	border-bottom: 1px dotted #686868;
+  	-webkit-transition: border-color .25s;
+  	font-weight: 500;
+}
+/*#main li a:hover,
+p a:hover { 
+	border-color: #f700a9;
+}*/
+
 /* Mobile first! */
 
 body {
 	border-top: 12px solid #3c3c3c;
-	font-family: 'Neuton', serif;
-	font-weight: 300;
+	font-family: 'Open Sans', sans-serif;
+	
+	/* Let's go with minimist fonts */
+	line-height: 1.65em;
+	
+	/* Font-deck */
+	font-size-adjust:0.488; 
+	font-weight:300; 
+	font-style:normal;
+	
+	color: #444;
+
 }
 
 #header {
@@ -246,38 +344,55 @@ body {
 #header nav {
 	position: absolute;
 	top: 15px;
-	right: 10px;
-	font-family: 'Bangers', cursive;
+	right: 20px;
+	font-weight: 600;
 }
 
 #header nav a {
 	text-decoration: none;
-	color: black;
 }
 
 #main {
 	padding: 0 1.5em;
 }
 
-h1 a {
+h1, h2, h3, h4, h5 {
 	font-family: 'Neuton', serif;
+}
+
+h1 a {
 	font-weight: 700;
 	text-decoration: none;
 	color: black;
 	font-size: 2em;
+	line-height: 1em;
 }
 
 h4 {
-	font-family: 'Neuton', serif;
 	font-weight: 300;
-	text-decoration: none;
-	color: black;
 	font-size: 0.95em;	
 }
 
+h4.date {
+	margin-top: 7em;
+	font: inherit;
+	font-size: 0.85em;
+	font-style: italic;
+}
+h4.date:before {
+	margin-right: .5em;
+	content: "★";	
+}
+
 p {
-	font-size: 1.3em;
-	line-height: 140%;
+	font-size: 1.1em;
+	line-height: 160%;
+}
+
+article section > p:last-of-type:after {
+	margin-left: 5px;
+	content: "☆";	
+	font-size: 0.85em;
 }
 
 p code {
@@ -290,21 +405,120 @@ pre {
 	border: 1px solid #efefef;
 	padding: 1em;
 	color: #713e3c;
+	background: #efefef;
+	
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	-o-border-radius: 5px;
+	-ms-border-radius: 5px;
+	-khtml-border-radius: 5px;
+	border-radius: 5px;
+	-moz-box-sizing: content-box;
+	-webkit-box-sizing: content-box;
+	-ms-box-sizing: content-box;
+	box-sizing: content-box;
+
+	font-size: 12px;
+	line-height: 14px;
 }
 
 p a {
 	text-decoration: none;
 	border-bottom: 1px solid #ccc;
-	font-weight: bold;
+	font-weight: 400;
+	color: #37548f;
 }
 
+article {
+	margin-bottom: 40px;
+}
 
+article footer {
+	border: 1px solid #ccc;
+	border-left: 0;
+	border-right: 0;
+	font-size: 0.85em;;
+}
+
+article footer nav ul {
+	list-style-type: none;
+}
+
+article footer a {
+	color: inherit;
+	border-bottom: 0 !important;
+}
 
 #footer {
 	background: #3c3c3c;
 	padding: 1em;
 	color: white;
+	position: relative;
+	font-size: 0.85em;
+	color: #aaa;
 }
+
+#footer a {
+	text-decoration: none;
+	border-bottom: none;
+	color: #aaa;
+	font-weight: bold;
+}
+
+#colophon {
+	margin-left: 150px;
+	width: 40%;
+}
+
+#powered-by {
+	background: transparent url(images/html5.png) no-repeat center 20px;
+	padding: 80px 25px;
+	position: absolute;
+	top: 0;
+	left: 0px;
+	width: 100px;
+	font-size: 10px;
+	text-align: center;
+	color: #888;
+}
+
+
+
+#theme {
+	margin-left: 150px;
+	
+}
+
+
+/* Blockquote */
+blockquote {
+	padding: 0.5em;
+	font-style: italic;
+}
+blockquote p:first-of-type:before {
+	content: "“";
+}
+blockquote p:last-of-type:after {
+	content: "”";
+}
+blockquote p {
+	margin-bottom: 9px;
+}
+blockquote * {
+	color: inherit;
+}
+cite {
+	font-size: 80%;
+	padding: 0 20px;
+}
+cite:before {
+	content: "Source: ";
+}
+cite * {
+
+}
+
+
 
 
 /* ==|== non-semantic helper classes ========================================
