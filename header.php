@@ -71,7 +71,7 @@ Jeffrey
   <div id="container">
     <header id="header">
     	<a href="/"><img id="bookmark" src="<?php /* echo get_option('bookmark_image_url') */ ?><?php bloginfo('template_url'); ?>/images/bookmark.png" alt="<?php bloginfo('name');?>">
-    		<nav><a href="#footer">About Me</a></nav>
+    		<nav><a href="#footer">To the footer!</a></nav>
     </header>
     	
     <div id="main">

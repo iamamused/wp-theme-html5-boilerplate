@@ -103,7 +103,7 @@ if ( function_exists('add_editor_style') ) add_editor_style();
 function register_my_menus() {
 	register_nav_menus(
 		array(
-			'menu-1' => __( 'Top menu' )
+			'menu-1' => __( 'Footer Menu' )
 		)
 	);
 	
@@ -161,11 +161,19 @@ add_action('wp_tag_cloud', 'html5boilerplate_tag_cloud');
 // Footer
 function html5boilerplate_footer() { ?>
 	<footer id="footer">
+		<section>
 		<p id="colophon">Jeffrey Sambells does what he loves. He is a father, designer, developer, author and entrepreneur among many other things. He started dabbling in the web more than a decade ago and has turned it into a passion, pushing the limits of what's possible. With an expertise in creating slick end-to-end user experiences, Jeffrey is always on top of the latest technologies, especially when it comes to mobile devices.</p> 
+		
+		<?php wp_nav_menu( array(
+			'theme_location' => 'menu-1',
+			'container'       => 'nav', 
+			'container_class' => 'menu-{menu slug}-container', 
+		) ); ?>
 		
 		<p id="powered-by">Proudly powered by <a href="http://www.wordpress.org">WordPress</a> and <a href="http://www.jeffreysambells.com/projects/wp-theme-html5-boilerplate/" title="Free WordPress theme">html5boilerplate</a></p>
 		
 		<p id="theme">Theme by <a href="http://www.jeffreysambells.com" title="Web Designer / Developer">Jeffrey Sambells</a>. <a href="<?php bloginfo('rss2_url'); ?>" title="Syndicate this site using RSS"><acronym title="Really Simple Syndication">RSS</acronym> Feed</a>.</p>
+		</section>
 	</footer>
 <?php } 
 add_action('wp_footer', 'html5boilerplate_footer');
@@ -280,3 +288,15 @@ function h5bp_settings_page() {
 </div>
 <?php 
 } 
+
+
+add_filter('next_posts_link_attributes', 'posts_link_attributes_next');
+add_filter('previous_posts_link_attributes', 'posts_link_attributes_previous');
+
+function posts_link_attributes_next(){
+	return 'class="button"';
+}
+function posts_link_attributes_previous(){
+	return 'class="button"';
+}
+

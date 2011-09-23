@@ -17,8 +17,6 @@
 		</article>
 
 		<?php endwhile; ?>
-
-		<?php comments_template(); ?>	
 		
 	<?php endif; ?>
 		
