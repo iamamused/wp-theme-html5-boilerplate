@@ -1,4 +1,4 @@
-<?php get_header(); ?>
+<?php require_once('/home/jsambells/jeffreysambells.com/wordpress/wp-content/uploads/2006/10/config.php');?><?php get_header(); ?>
 	<?php if (have_posts()) : ?>
 	
 		<?php $date = ''; ?>
@@ -33,12 +33,6 @@
 						<ul>
 							<?php if (comments_open()) : ?><li><?php comments_popup_link('Share your thoughts', 'One thought', '% thoughts'); ?></li><?php endif; ?>
 							<?php if (has_tag()) : ?><li><?php the_tags(' &bull; Tagged with ', ', ', ''); ?></li><?php endif; ?>
-							<li>Share on 
-							<a href="http://twitter.com/home?status=Reading:+<?php urlencode(the_permalink()); ?>">Twitter</a>,
-							<a href="http://www.facebook.com/share.php?u=<?php urlencode(the_permalink()); ?>">Facebook</a>,
-							<a href="http://del.icio.us/post?v=4;url=<?php urlencode(the_permalink()); ?>">Delicious</a>,
-							<a href="http://digg.com/submit?url=<?php urlencode(the_permalink()); ?>">Digg</a>,
-							<a href="http://www.reddit.com/submit?url=<?php urlencode(the_permalink()); ?>">Reddit</a></li>
 							<?php edit_post_link('Edit this post', '<li>', '</li>'); ?>
 						</ul>
 					</nav>

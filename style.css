@@ -12,11 +12,6 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 /* If you're using CSSEdit enter overrides here */
 
-/* @override 
-	http://dev.jeffreysambells.com/wordpress/wp-content/themes/html5boilerplate-wordpress-theme/style.css?v=1
-	http://jeffreysambells.com/wordpress/wp-content/themes/html5boilerplate-wordpress-theme/style.css?v=1
-	http://jeffreysambells.com/wordpress/wp-content/themes/wp-theme-html5-boilerplate/style.css?v=1
-*/
 
 /**
  * HTML5 ✰ Boilerplate
@@ -165,7 +160,7 @@ body, select, input, textarea {
   color: #c2c2c2;
   /* Set your base font here, to apply evenly */
   /* font-family: Georgia, serif;  */
-  	font-family:Helvetica, 'Helvetica Neue', Helvetica, sans-serif; 
+  	font-family:'Metrophobic', Helvetica, 'Helvetica Neue', Helvetica, sans-serif; 
 
 }
 
@@ -213,7 +208,7 @@ hr {
 }
 
 html {
-	background: #2e2e2e;
+	background: #29322d;
 }
 
 body {
@@ -292,13 +287,12 @@ h1 {
 	font-size: 182%;
 	line-height: 1.3em;
 	font-weight: 700;
-	letter-spacing: 0.05em;
+	letter-spacing: -0.05em;
 
 }
 article h1 {
 	font-size: 197%;
 	font-weight: 700;
-	letter-spacing: 0;
 }
 h2 {
 	margin-top: 1.5em;
@@ -361,7 +355,7 @@ code {
 }
 pre {
 	margin: 3em 1em;
-	font-size: 85%;
+	font-size: 95%;
 	
 	-moz-border-radius: 3px;
 	-webkit-border-radius: 3px;
