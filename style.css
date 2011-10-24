@@ -14,6 +14,7 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 /* @override 
 	http://dev.jeffreysambells.com/wordpress/wp-content/themes/html5boilerplate-wordpress-theme/style.css?v=1
+	http://jeffreysambells.com/wordpress/wp-content/themes/wp-theme-html5-boilerplate/style.css?v=1
 */
 
 
@@ -395,7 +396,7 @@ p {
 	line-height: 160%;
 }
 
-article section > p:last-of-type:after {
+#colophon:after, article section > p:last-of-type:after {
 	margin-left: 5px;
 	content: "☆";	
 	font-size: 0.85em;
@@ -428,7 +429,7 @@ pre {
 	line-height: 14px;
 }
 
-p a {
+p a, li a {
 	text-decoration: none;
 	border-bottom: 1px solid #ccc;
 	font-weight: 400;
@@ -462,6 +463,8 @@ article footer a {
 	position: relative;
 	font-size: 0.85em;
 	color: #aaa;
+	
+	/* TODO: #29322D #AAA390 */
 }
 
 #footer a {
@@ -637,7 +640,11 @@ a.supersize {
 
 
 
+/* Highly customized to JeffreySambellls.com */
 
+.menu-item-757 a {
+	color: #e86031 !important;
+}
 
 /* ==|== non-semantic helper classes ========================================
    Please define your styles before this section.
@@ -692,6 +699,11 @@ a.supersize {
 
 @media only screen and (min-width: 768px) {
   /* Style adjustments for viewports 768px and over go here */
+
+#footer nav a[title]:after { 
+	content: " ~ " attr(title); 
+	color: #666;
+}
 
 }
 
