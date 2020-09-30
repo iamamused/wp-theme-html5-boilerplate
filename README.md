@@ -1,1 +1,1 @@
-HTMLBoilerplate Wordpress Theme v1.0
+HTML Code Boilerplate Wordpress Theme v1.0
